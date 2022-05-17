@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Pizza</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="cont">
+        <div id="sail">
+            <h1><img src="favicon.png"> Status Pizza</h1>
+            <h3>API for HTTP status code pizzas.</h3>
+            <span>
+                <a href="https://github.com/pweth/status.pizza"><span>Repository</span></a> &bull; <a href="mailto:hello@status.pizza"><span>Contact</span></a>
+            </span>
+            <a href="https://status.pizza/200" target="_blank">
+                <code>
+                    <span>https</span>://<span class="clear">status.pizza</span>/<span id="code" class="clear"></span>
+                </code>
+            </a>
+            <small>
+                .json &rarr; application/json<br>
+                .png &rarr; image/png
+            </small>
+        </div>
+        <a id="scroll" class="scroll-down arrows"><span></span></a>
+    </div>
+    <div id="pizza"><div class="cont" id="ship"></div></div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://status.pizza/codes.js"></script>
+    <script src="https://status.pizza/script.js"></script>
+</body>
+</html>

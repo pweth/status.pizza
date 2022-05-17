@@ -1,0 +1,179 @@
+html, body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: #222222;
+    color: #ffffff;
+    margin: 0;
+    overflow-x: hidden;
+    user-select: none;
+}
+body, a {
+    font-family: -apple-system, monospace;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+span a, span a:focus, span a:visited {
+    color: #555555;
+    text-decoration: underline;
+    transition: color 0.25s;
+}
+span a:hover {
+    color: #ffffff;
+}
+a span {
+    color: #ffffff;
+}
+.cont {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+@media only screen and (min-width: 601px) {
+    .cont {
+        width: 85%;
+    }
+}
+@media only screen and (min-width: 993px) {
+    .cont {
+        width: 70%;
+    }
+}
+h1 img {
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+}
+h3 {
+    color: #dddddd;
+    font-style: italic;
+    font-weight: normal;
+}
+#sail {
+    height: fit-content;
+}
+code {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: #111111;
+    color: #aaaaaa;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 32px;
+    text-align: left;
+    margin-top: 25px;
+    transition: background-color 0.25s;
+}
+code:hover {
+    background-color: #000000;
+}
+code span:first-child {
+    color: #98c379;
+}
+code .clear {
+    color: #ffffff;
+}
+small {
+    display: block;
+    color: #777777;
+    padding-top: 5px;
+}
+content {
+    display: block;
+    background: #111111;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    overflow: hidden;
+    max-width: 500px;
+    transition: transform 0.25s;
+    border-radius: 15px;
+}
+content:hover {
+    transform: scale(1.05);
+}
+content img {
+    width: 100%;
+    background: #111111;
+}
+content span:nth-child(2) {
+    display: block;
+    font-size: 32px;
+    margin-top: 10px;
+}
+content span:nth-child(3) {
+    display: block;
+    font-size: 20px;
+    color: #dddddd;
+    font-style: italic;
+    padding-bottom: 20px;
+}
+body > div:first-child {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body div:first-child > span {
+    font-size: 18px;
+    color: #dddddd;
+}
+body div:nth-child(2) {
+    position: relative;
+    z-index: 3;
+    background: #222222;
+}
+body div:nth-child(2) div {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.scroll-down {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 75px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    bottom: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+.scroll-down span {
+    position: absolute;
+    display: inline-block;
+    top: 20px;
+    height: 30px;
+    width: 2px;
+    left: calc(50% - 1px);
+}
+.scroll-down span::before, .scroll-down span::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0.75;
+    border-radius: 3px;
+    transition: opacity 0.25s;
+}
+.scroll-down:hover span::before, .scroll-down:hover span::after {
+    opacity: 1;
+}
+.scroll-down span::before {
+    transform-origin: bottom;
+    transform: rotate(-45deg);
+}
+.scroll-down span::after {
+    transform-origin: bottom;
+    margin-left: -1px;
+    transform: rotate(45deg);
+}
