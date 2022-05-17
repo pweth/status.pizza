@@ -22,7 +22,7 @@ To receive a JSON object containing status code metadata and URLs for both the c
 
 `https://status.pizza/[CODE].json`
 
-The object you receieve will have the following format:
+The object you receive will have the following format:
 
 ```
 {
