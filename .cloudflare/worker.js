@@ -6,7 +6,7 @@ addEventListener("fetch", (event) => {
     );
 });
 
-let codes = {
+const codes = {
     "100": "Continue",
     "101": "Switching Protocols",
     "102": "Processing",
@@ -39,7 +39,15 @@ let codes = {
     /*...*/
     "521": "Web Server Is Down",
 };
-  
+
+const categories = [
+    "Informational",
+    "Successful",
+    "Redirection",
+    "Client error",
+    "Server error"
+];
+
 async function handleRequest(request) {
     const { pathname } = new URL(request.url);
 
@@ -64,24 +72,12 @@ async function handleRequest(request) {
     if (pathname.length == 9 && pathname.substring(4, 9).toLowerCase() == ".json") {
         let code = pathname.substring(1, 4);
         if (Object.keys(codes).indexOf(code) > -1) {
-            let cat, integer = parseInt(code);
-            if (integer < 200) {
-                cat = "Informational";
-            } else if (integer < 300) {
-                cat = "Successful";
-            } else if (integer < 400) {
-                cat = "Redirection";
-            } else if (integer < 500) {
-                cat = "Client error";
-            } else {
-                cat = "Server error";
-            }
             return new Response(JSON.stringify({
                 "code": code,
                 "title": codes[code],
                 "image": "https://status.pizza/" + code,
                 "raw": "https://status.pizza/img/" + code + ".png",
-                "category": cat
+                "category": categories[Math.floor(parseInt(code) / 100) - 1]
             }), {
                 headers: {
                     "Content-Type": "application/json" 
