@@ -5,7 +5,7 @@ for (let code of Object.keys(codes)) {
     anchor.setAttribute("target", "_blank");
     let content = document.createElement("content");
     let image = document.createElement("img");
-    image.src = "img/" + code + ".png";
+    image.src = "https://static.status.pizza/" + code + ".png";
     image.draggable = false;
     content.appendChild(image);
     let disp = document.createElement("span");
