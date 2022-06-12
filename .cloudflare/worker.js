@@ -30,6 +30,7 @@ const codes = {
     "402": "Payment Required",
     "403": "Forbidden",
     "404": "Not Found",
+	"406": "Not Acceptable",
     /* LOL */
     "418": "I'm a teapot",
     /*...*/
