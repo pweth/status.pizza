@@ -89,7 +89,7 @@ async function handleRequest(request, event) {
                 "code": code,
                 "title": codes[code],
                 "image": "https://status.pizza/" + code,
-                "raw": "https://status.pizza/img/" + code + ".png",
+                "raw": "https://static.status.pizza/" + code + ".png",
                 "category": categories[Math.floor(parseInt(code) / 100) - 1]
             }), {
                 headers: {
