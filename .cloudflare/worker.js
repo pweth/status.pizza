@@ -1,6 +1,6 @@
 addEventListener("fetch", (event) => {
     event.respondWith(
-        handleRequest(event.request).catch(
+        handleRequest(event.request, event).catch(
         (err) => new Response(err.stack, { status: 500 })
         )
     );
@@ -30,14 +30,10 @@ const codes = {
     "402": "Payment Required",
     "403": "Forbidden",
     "404": "Not Found",
-	"406": "Not Acceptable",
-    /* LOL */
+    "406": "Not Acceptable",
     "418": "I'm a teapot",
-    /*...*/
     "422": "Unprocessable Entity",
-    /*...*/
     "500": "Internal Server Error",
-    /*...*/
     "521": "Web Server Is Down",
 };
 
@@ -49,8 +45,11 @@ const categories = [
     "Server error"
 ];
 
-async function handleRequest(request) {
+
+
+async function handleRequest(request, event) {
     const { pathname } = new URL(request.url);
+    const cache = caches.default;
 
     // codes.js request
     if (pathname == "/codes.js") {
@@ -65,13 +64,20 @@ async function handleRequest(request) {
     if (pathname.length == 4 || (pathname.length == 8 && pathname.substring(4, 8).toLowerCase() == ".png")) {
         let code = pathname.substring(1, 4);
         if (Object.keys(codes).indexOf(code) > -1) {
-            let file = await PIZZA.get(code, {type: "arrayBuffer"});
-            return new Response(file, {
-                headers: {
-                    "content-type": "image/png; charset=UTF-8",
-                },
-                status: 200
-            });
+            // Check if request has been cached
+            let response = await cache.match(request);
+            // Otherwise, return image from KV
+            if (!response) {
+                let file = await PIZZA.get(code, {type: "arrayBuffer"});
+                response = new Response(file, {
+                    headers: {
+                        "content-type": "image/png; charset=UTF-8",
+                    },
+                    status: 200
+                });
+                event.waitUntil(cache.put(request, response.clone()));
+            }
+            return response;
         }
     }
 
@@ -103,12 +109,6 @@ async function handleRequest(request) {
     if (static.status == 200) {
         return static;
     } else {
-        let file = await PIZZA.get("404", {type: "arrayBuffer"});
-        return new Response(file, {
-            headers: {
-                "content-type": "image/png; charset=UTF-8",
-            },
-            status: 404
-        });
+        return Response.redirect("https://status.pizza/404", 302);
     }
 }
