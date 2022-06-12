@@ -33,6 +33,7 @@ const codes = {
     "406": "Not Acceptable",
     "418": "I'm a teapot",
     "422": "Unprocessable Entity",
+    "429": "Too Many Requests",
     "500": "Internal Server Error",
     "521": "Web Server Is Down",
 };
