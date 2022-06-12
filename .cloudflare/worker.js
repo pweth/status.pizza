@@ -64,7 +64,13 @@ async function handleRequest(request) {
     if (pathname.length == 4 || (pathname.length == 8 && pathname.substring(4, 8).toLowerCase() == ".png")) {
         let code = pathname.substring(1, 4);
         if (Object.keys(codes).indexOf(code) > -1) {
-            return fetch("https://pweth.github.io/status.pizza/srv/" + code + ".png");
+            let file = await PIZZA.get(code, {type: "arrayBuffer"});
+            return new Response(file, {
+                headers: {
+                    "content-type": "image/png; charset=UTF-8",
+                },
+                status: 200
+            });
         }
     }
 
@@ -96,6 +102,12 @@ async function handleRequest(request) {
     if (static.status == 200) {
         return static;
     } else {
-        return fetch("https://pweth.github.io/status.pizza/srv/404.png");
+        let file = await PIZZA.get("404", {type: "arrayBuffer"});
+        return new Response(file, {
+            headers: {
+                "content-type": "image/png; charset=UTF-8",
+            },
+            status: 404
+        });
     }
 }

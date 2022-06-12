@@ -40,7 +40,7 @@ That\'s it; you are now a certified Status Pizza expert!
 
 Yes please!
 
-Feel free to create PRs on this repository, updating `.cloudflare/worker.js`, `srv/[CODE].png` and `img/[CODE].png` accordingly.
+Feel free to create PRs on this repository, updating `.cloudflare/worker.js` and `img/[CODE].png` accordingly.
 
 Alternatively please email a **500x500 PNG**, along with the status code, to [hello@status.pizza](mailto:hello@status.pizza).
 
