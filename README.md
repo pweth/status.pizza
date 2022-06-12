@@ -1,7 +1,7 @@
 <div align="center">
 <h1>🍕 Status Pizza</h1>
 
-[![302: Found](https://status.pizza/302.png)](https://status.pizza)
+[![302: Found](https://static.status.pizza/302.png)](https://status.pizza)
 </div>
 
 ## ⚙️ How do I use it?
@@ -29,7 +29,7 @@ The object you receive will have the following format:
 	"code": "[CODE]",
 	"title": "[CODE_TITLE]",
 	"image": "https://status.pizza/[CODE]",
-	"raw": "https://status.pizza/img/[CODE].png",
+	"raw": "https://static.status.pizza/[CODE].png",
 	"category": "[CODE_CATEGORY]"
 }
 ```
