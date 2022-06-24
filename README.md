@@ -1,7 +1,7 @@
 <div align="center">
 <h1>🍕 Status Pizza</h1>
 
-[![302: Found](https://static.status.pizza/302.png)](https://status.pizza)
+[![406: Not Acceptable](https://status.pizza/406.png)](https://status.pizza)
 </div>
 
 ## ⚙️ How do I use it?
