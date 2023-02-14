@@ -7,19 +7,19 @@
     <title>Status Pizza</title>
     <meta name="twitter:card" content="summary">
 	<meta name="twitter:url" content="https://status.pizza">
-	<meta name="twitter:image" content="https://static.status.pizza/302.png">
+	<meta name="twitter:image" content="https://status.pizza/img/200.png">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://status.pizza">
 	<meta property="og:title" content="Status Pizza">
 	<meta property="og:description" content="API for HTTP status code pizzas.">
-	<meta property="og:image" content="https://static.status.pizza/302.png">
-    <link rel="icon" type="image/png" href="https://status.pizza/favicon.png">
-    <link rel="stylesheet" type="text/css" href="https://status.pizza/style.css">
+	<meta property="og:image" content="https://status.pizza/img/200.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-    <div class="cont">
-        <div id="sail">
-            <h1><img src="favicon.png"> Status Pizza</h1>
+    <main>
+        <div>
+            <h1><img src="/favicon.png"> Status Pizza</h1>
             <h3>API for HTTP status code pizzas.</h3>
             <span>
                 <a href="https://github.com/pweth/status.pizza"><span>Repository</span></a> &bull; <a href="mailto:hello@status.pizza"><span>Contact</span></a>
@@ -34,11 +34,12 @@
                 .png &rarr; image/png
             </small>
         </div>
-        <a id="scroll" class="scroll-down arrows"><span></span></a>
+        <a id="scroll"><span></span></a>
+    </main>
+    <div id="pizza">
+        <section id="codes"></section>
     </div>
-    <div id="pizza"><div class="cont" id="ship"></div></div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://status.pizza/codes.js"></script>
-    <script src="https://status.pizza/script.js"></script>
+	<script type="text/javascript" src="/typed.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
 </body>
 </html>
