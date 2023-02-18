@@ -1,9 +1,7 @@
 <div align="center">
 	<h1>🍕 Status Pizza</h1>
 	<a href="https://status.pizza">
-		<img src="https://status.pizza/201" width="180">
-		<img src="https://status.pizza/406" width="180">
-		<img src="https://status.pizza/305" width="180">
+		<img width="540" src="https://user-images.githubusercontent.com/22416843/219874270-e8342606-716f-4e97-980a-3ef0b1a8695d.png">
 	</a>
 </div>
 
@@ -41,11 +39,15 @@ The object you receive will have the following format:
 
 That\'s it; you are now a certified Status Pizza expert!
 
+---
+
 ## Can I submit a pizza photo?
 
 Yes please!
 
 Feel free to create a PR on this repository or email in your submission to [hello@status.pizza](mailto:hello@status.pizza).
+
+---
 
 ## Acknowledgements
 
