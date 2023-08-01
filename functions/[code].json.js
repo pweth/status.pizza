@@ -40,7 +40,7 @@ const codes = {
     "506": "Variant Also Negotiates",
     "507": "Insufficient Storage",
     "521": "Web Server Is Down",
-    "530": "Site is Frozen"
+    "530": "Site Is Frozen"
 };
 
 const categories = [
